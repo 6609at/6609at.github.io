@@ -191,14 +191,22 @@ body {
 }
 
 .carusel-pag-item:hover {
-    border: solid 1px #d3c1ad;
+    border: solid 1.5px #d3c1ad;
     transform: scale(1.5);
     background-color: #29292c;
     opacity: 1;
 }
+
 .carusel-pag-item:active {
-    border: solid 1px #d3c1ad;
+    border: solid 1.5px #d3c1ad;
     transform: scale(1.5);
     background-color: #ffffff;
+    opacity: 0.7;
+}
+
+.item-active {
+    border: solid 1.5px #d3c1ad;
+    transform: scale(1.5);
+    background-color: #29292c;
     opacity: 0.7;
 }
