@@ -9,7 +9,7 @@ body {
     color: #fff;
     background-image: url(../img/header.png);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
 }
 
 .header-menu {
@@ -209,4 +209,117 @@ body {
     transform: scale(1.5);
     background-color: #29292c;
     opacity: 0.7;
+}
+
+
+/* Начало второго блока */
+
+.Сapability-block {
+    padding: 80px 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.Сapability-block-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 271px;
+}
+
+.Сapability-block-item:nth-child(2) {
+    margin: 0 33px;
+    padding: 9px 0 0 0;
+}
+
+.Сapability-block-item:nth-child(3) {
+    margin-right: 34px;
+    padding: 4px 0 0 0;
+}
+
+.Сapability-block-item:nth-child(4) {
+    padding: 12px 0 0 0;
+}
+
+.Сapability-block-item:after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 3px;
+    background-color: #f1eee9;
+}
+
+.Сapability-block-icon {
+    display: block;
+    fill: #555555;
+    margin: 0 0 29px 0;
+}
+
+.Сapability-block-item span {
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #555555;
+    margin: 0 0 19px 0;
+}
+
+.Сapability-block-item p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.71;
+    color: #8c8c8c;
+    margin: 0 0 30px 0;
+}
+
+.Сapability-block-item:hover .Сapability-block-icon {
+    fill: #c7b299;
+}
+
+.Сapability-block-item:hover span {
+    color: #c7b299;
+}
+
+.Сapability-block-item:hover:after {
+    background-color: #c7b299;
+}
+
+
+/* начало третьего блока */
+
+.idea-block {
+    padding: 80px 0 0 0;
+    box-sizing: border-box;
+    background-color: #fbfaf8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 700px;
+    background-image: url(../img/browser-center.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.idea-block span {
+    color: #555555;
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.idea-block p {
+    margin: 0 auto;
+    width: 44%;
+    text-align: center;
+    color: #8c8c8c;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75;
 }
