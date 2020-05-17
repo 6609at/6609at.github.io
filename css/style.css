@@ -23,11 +23,15 @@
 }
 
 @font-face {
+    font-family: 'monserrat200';
+    src: url('../font/Montserrat/montserrat-extralight200.eot');
+    src: url('../font/Montserrat/montserrat-extralight200.eot?#iefix') format('embedded-opentype'), url('../font/Montserrat/montserrat-extralight200.woff2') format('woff2'), url('../font/Montserrat/montserrat-extralight200.woff') format('woff'), url('../font/Montserrat/montserrat-extralight200.ttf') format('ttf');
+}
+
+@font-face {
     font-family: 'monserrat300';
     src: url('../font/Montserrat/montserrat-light300.eot');
     src: url('../font/Montserrat/montserrat-light300.eot?#iefix') format('embedded-opentype'), url('../font/Montserrat/montserrat-light300.woff2') format('woff2'), url('../font/Montserrat/montserrat-light300.woff') format('woff'), url('../font/Montserrat/montserrat-light300.ttf') format('ttf');
-    font-weight: 300;
-    font-style: normal;
 }
 
 @font-face {
@@ -38,7 +42,7 @@
     font-style: normal;
 }
 
-@keyframes spoiler  {
+@keyframes spoiler {
     0% {
         max-height: 0;
     }
@@ -842,7 +846,6 @@ body {
     align-items: center;
     justify-content: flex-start;
     outline: none;
-  
 }
 
 .mobile-info-detail summary::-webkit-details-marker {
@@ -861,10 +864,241 @@ body {
 .mobile-info-detail[open] summary:before {
     transform: rotate(90deg);
 }
+
 .mobile-info-detail p {
     overflow: hidden;
     padding-left: 50px;
 }
+
 .mobile-info-detail[open] p {
     animation: spoiler 1.7s;
 }
+
+
+/* начало блока с счетчиками */
+
+.counter-block {
+    padding: 69px 500px 60px;
+    min-height: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: linear-gradient(to top, #211b19, #4e3427);
+}
+
+.counter-block div {
+    display: flex;
+    flex-direction: column;
+    min-width: 132px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.counter-img {
+    fill: #c7b299;
+}
+
+.counter {
+    font-family: "monserrat200", sans-serif;
+    font-size: 48px;
+    font-weight: 200;
+    font-style: normal;
+    line-height: 0.75;
+    color: #fff;
+    margin: 30px auto 19px;
+}
+
+.counter-txt {
+    font-family: "monserrat300", sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.43;
+    color: #c7b299;
+    text-transform: uppercase;
+}
+
+.counter-txt:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    margin: 20px auto 0px
+}
+
+
+/* начало блока с постами */
+
+.posts-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.posts-block>span {
+    font-family: "raleway600";
+    font-size: 30px;
+    font-weight: 600;
+    font-style: normal;
+    color: #555;
+    text-transform: capitalize;
+}
+
+.posts-block p {
+    margin: 28px auto 37px;
+    width: 41%;
+    text-align: center;
+    font-family: "monserrat300";
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.75;
+    color: #8c8c8c;
+}
+
+.posts-wrp {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.posts-wrp article {
+    min-height: 395px;
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 30px 33px;
+    border: solid 1px #f8f8f8;
+    box-sizing: border-box;
+}
+
+.posts-wrp article:nth-child(1) {
+    background-image: url(../img/posts-img1.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.posts-wrp article:nth-child(2) {
+    background-image: url(../img/posts-img2.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0 30px 0;
+}
+
+.posts-wrp article:nth-child(3) {
+    background-image: url(../img/posts-img3.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.posts-wrp article span:nth-child(1) {
+    font-family: "raleway500";
+    font-size: 20px;
+    font-weight: 500;
+    font-style: normal;
+    color: #555;
+}
+
+.posts-wrp article span:nth-child(2) {
+    font-family: "monserrat300";
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 1.57;
+    color: #8c8c8c;
+    margin: 9px 0 17px;
+}
+
+.posts-wrp article a {
+    font-family: "monserrat300";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.43;
+    font-style: normal;
+    color: #c7b299;
+    text-decoration: none;
+    position: relative;
+}
+
+.posts-wrp article a:hover {
+    color: #eed5b7;
+}
+
+.posts-wrp article a:active {
+    color: #ac8d69;
+}
+
+.posts-wrp article a:after {
+    display: block;
+    content: "";
+    background-image: url('../img/posts-arrow.png');
+    width: 5px;
+    height: 8px;
+    background-size: cover;
+    position: absolute;
+    top: 6px;
+    left: 83px;
+}
+
+.posts-wrp article:hover span:nth-child(1) {
+    color: #c7b299;
+}
+
+.posts-wrp article:hover span:nth-child(2) {
+    color: #fff;
+}
+
+.posts-wrp article:hover:nth-child(1) {
+    background-color: #362f2d;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/posts-img1.png);
+}
+
+.posts-wrp article:hover:nth-child(2) {
+    background-color: #362f2d;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/posts-img2.png);
+}
+
+.posts-wrp article:hover:nth-child(3) {
+    background-color: #362f2d;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/posts-img3.png);
+}
+
+.btn-wrp {
+    min-height: 25px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.btn-wrp a:nth-child(1) {
+    display: block;
+    background-image: url(../img/posts-left.png);
+    width: 22px;
+    height: 22px;
+    outline: none;
+    margin-right: 8px;
+}
+
+.btn-wrp a:nth-child(2) {
+    display: block;
+    background-image: url(../img/posts-right.png);
+    width: 22px;
+    height: 22px;
+    outline: none;
+}
+/* начало блока с локотипами партнера */
+.parner-block {
+    background-color: #555556;
+    padding: 140px 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../img/partner-bg.jpg);
+    
+}
+/* начало блока футера */ 
+
