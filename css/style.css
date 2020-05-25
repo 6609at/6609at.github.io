@@ -44,8 +44,12 @@
     font-family: 'monserrat400';
     src: url('../font/Montserrat/montserrat-regular400.eot');
     src: url('../font/Montserrat/montserrat-regular400.eot?#iefix') format('embedded-opentype'), url('../font/Montserrat/montserrat-regular400.woff2') format('woff2'), url('../font/Montserrat/montserrat-regular400.woff') format('woff'), url('../font/Montserrat/montserrat-regular400.ttf') format('ttf');
-    font-weight: 300;
-    font-style: normal;
+}
+
+@font-face {
+    font-family: 'roboto400';
+    src: url('../font/roboto/roboto-regular400.eot');
+    src: url('../font/roboto/roboto-regular400.eot?#iefix') format('embedded-opentype'), url('../font/roboto/roboto-regular400.woff2') format('woff2'), url('../font/roboto/roboto-regular400.woff') format('woff'), url('../font/roboto/roboto-regular400.ttf') format('ttf');
 }
 
 @keyframes spoiler {
@@ -59,11 +63,11 @@
 
 body {
     width: 1920px;
-    margin: 0 auto;
-    padding: 0;
+    margin: 0 auto;   
 }
 
 .header {
+    width: 100%;
     background-color: #4f4d48;
     color: #fff;
     background-image: url(../img/header.png);
@@ -300,11 +304,16 @@ body {
     opacity: 0.7;
 }
 
+.mobile-site {
+    display: none;
+}
+
 
 /* Начало второго блока */
 
 .Сapability-block {
-    padding: 80px 0;
+    width: 100%;
+    padding: 80px 19.6%;
     background-color: #fff;
     display: flex;
     flex-direction: row;
@@ -317,7 +326,6 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    width: 271px;
 }
 
 .Сapability-block-item:nth-child(2) {
@@ -384,6 +392,7 @@ body {
 /* начало третьего блока */
 
 .idea-block {
+    width: 100%;
     padding: 80px 0 0 0;
     box-sizing: border-box;
     background-color: #fbfaf8;
@@ -421,6 +430,7 @@ body {
 /*начало блока aside*/
 
 .aside-block {
+    width: 100%;
     box-sizing: border-box;
     padding: 50px 376px;
     display: flex;
@@ -494,6 +504,7 @@ body {
 /*начало блока статей*/
 
 .projects-block {
+    width: 100%;
     padding: 80px 0;
     display: flex;
     flex-direction: column;
@@ -523,12 +534,13 @@ body {
 .navig-btn-wrp {
     margin-bottom: 40px;
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    justify-content: center;
 }
 
 .navig-btn {
-    min-width: 120px;
-    min-height: 32px;
+    width: 120px;
+    height: 32px;
     border-radius: 3px;
     background-color: #fff;
     outline: none;
@@ -575,12 +587,13 @@ body {
 .article-wrp {
     display: flex;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .article-item {
     display: flex;
     flex-direction: column;
-    width: 370px;
     min-height: 337px;
     background-color: #fbfaf8;
     position: relative;
@@ -802,6 +815,7 @@ body {
 /*начало блока с информацией о мобильных устройствах*/
 
 .mobile-info-block {
+    width: 100%;
     min-height: 695px;
     padding: 195px 0 183px 45.68%;
     box-sizing: border-box;
@@ -843,6 +857,7 @@ body {
     line-height: 2;
     text-align: left;
     color: #8c8c8c;
+    
 }
 
 .mobile-info-detail summary {
@@ -852,6 +867,7 @@ body {
     align-items: center;
     justify-content: flex-start;
     outline: none;
+    transition: 1s;
 }
 
 .mobile-info-detail summary::-webkit-details-marker {
@@ -874,6 +890,7 @@ body {
 .mobile-info-detail p {
     overflow: hidden;
     padding-left: 50px;
+    transition: .6s;
 }
 
 .mobile-info-detail[open] p {
@@ -884,6 +901,7 @@ body {
 /* начало блока с счетчиками */
 
 .counter-block {
+    width: 100%;
     padding: 69px 500px 60px;
     min-height: 300px;
     box-sizing: border-box;
@@ -896,7 +914,7 @@ body {
 .counter-block div {
     display: flex;
     flex-direction: column;
-    min-width: 132px;
+    min-width: 6%;
     align-items: center;
     justify-content: flex-end;
 }
@@ -938,13 +956,14 @@ body {
 /* начало блока с постами */
 
 .posts-block {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 80px 0;
 }
 
-.posts-block>span {
+.posts-block-title {
     font-family: "raleway600";
     font-size: 30px;
     font-weight: 600;
@@ -980,6 +999,45 @@ body {
     padding: 0 30px 33px;
     border: solid 1px #f8f8f8;
     box-sizing: border-box;
+    position: relative;
+}
+
+.posts-date-block {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 60px;
+}
+
+.posts-date-block > span:first-child {
+    display: block;
+    width: 100%;
+    height: 35px;
+    background-color: #363636;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 4px 4px 0 0;
+    font-family: "monserrat300";
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.posts-date-block > span:last-child {
+    display: block;
+    width: 100%;
+    height: 25px;
+    background-color: #252525;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 0 0 4px 4px;
+    font-family: "roboto400";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
 }
 
 .posts-wrp article:nth-child(1) {
@@ -1001,7 +1059,7 @@ body {
     background-size: 100%;
 }
 
-.posts-wrp article span:nth-child(1) {
+.posts-wrp article > span:nth-of-type(1) {
     font-family: "raleway500";
     font-size: 20px;
     font-weight: 500;
@@ -1009,7 +1067,7 @@ body {
     color: #555;
 }
 
-.posts-wrp article span:nth-child(2) {
+.posts-wrp article > span:nth-of-type(2) {
     font-family: "monserrat300";
     font-size: 14px;
     font-weight: 300;
@@ -1042,25 +1100,35 @@ body {
     display: block;
     content: "";
     background-image: url('../img/posts-arrow.png');
+    background-repeat: no-repeat;
     width: 5px;
     height: 8px;
-    background-size: cover;
+    background-size: contain;
     position: absolute;
     top: 6px;
     left: 83px;
 }
 
-.posts-wrp article:hover span:nth-child(1) {
+.posts-wrp article:hover .date-up {
+    background-color: #c7b299;
+}
+
+.posts-wrp article:hover .date-down {
+    background-color: #a48d72;
+}
+
+.posts-wrp article:hover > span:nth-of-type(1) {
     color: #c7b299;
 }
 
-.posts-wrp article:hover span:nth-child(2) {
+.posts-wrp article:hover > span:nth-of-type(2) {
     color: #fff;
 }
 
 .posts-wrp article:hover:nth-child(1) {
     background-color: #362f2d;
     background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../img/posts-img1.png);
+    background-repeat: no-repeat;
 }
 
 .posts-wrp article:hover:nth-child(2) {
@@ -1100,20 +1168,35 @@ body {
 /* начало блока с локотипами партнера */
 
 .parner-block {
+    width: 100%;
     background-color: #555556;
     padding: 140px 400px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-image: url(../img/partner-bg.jpg);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
+.partner-link {
+    transition: .5s;
+}
+
+.partner-link:hover {
+    transform: scale(1.2);
+}
+.partner-link:active{
+    opacity: .5;
+    transform: scale(.9);
+}
 
 /* начало 1 блока футера */
 
 .footer-text {
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -1261,7 +1344,12 @@ body {
 .column-wrp:nth-child(4) {
     font-size: 0;
 }
-
+.widget-img {
+    transition: .4s
+}
+.widget-img:hover {
+    transform: scale(1.1)
+}
 .column-wrp:nth-child(4) img:nth-of-type(1) {
     margin-bottom: 10px;
     margin-right: 10px;
@@ -1279,6 +1367,7 @@ body {
 /* начало футера */
 
 .footer-block {
+    width: 100%;
     min-height: 111px;
     background-color: #111111;
     padding: 0 19.5% 0 19.6%;
@@ -1380,4 +1469,199 @@ body {
 
 .text-right span:nth-child(2) a:active {
     color: #6e6d6d;
+}
+
+
+/* Начало медиа запросов */
+
+@media screen and (width: 480px) {
+    .video-block,
+    .aside-block,
+    .counter-block,
+    .footer-text,
+    .idea-block,
+    .header-carousel,
+    .load-more-btn {
+        display: none;
+    }
+    body {
+        width: 100%;
+    }
+    .header-menu {
+        z-index: 5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px 40px;
+        background-image: url("../img/header.png");
+        background-size: cover;
+        margin-bottom: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+    }
+    .header-logo {
+        font-size: 34px;
+    }
+    #menu-toggle:checked ~ .menu-btn {
+        z-index: 5;
+    }
+    .header-menu-item-wrp {
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        visibility: hidden;
+        top: 0px;
+        padding-top: 115px;
+        right: -170%;
+        height: 100%;
+        background-color: #333;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        transition: .5s;
+    }
+    #menu-toggle:checked ~ .header-menu-item-wrp {
+        display: flex;
+        flex-wrap: wrap;
+        position: fixed;
+        padding-top: 115px;
+        visibility: visible;
+        right: 0;
+        top: 0;
+        height: 100%;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50px;
+        right: 30px;
+        width: 26px;
+        height: 26px;
+        z-index: 2;
+    }
+    .menu-btn > span,
+    .menu-btn > span::before,
+    .menu-btn > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        transition-duration: .3s;
+    }
+    .menu-btn > span::before {
+        content: '';
+        top: -8px;
+    }
+    .menu-btn > span::after {
+        content: '';
+        top: 8px;
+    }
+    .header-menu-item-wrp a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-size: 19px;
+    }
+    .header-menu-item-wrp a:nth-child(8) {
+        margin: 0;
+    }
+    /* Начало второго блока */
+    .Сapability-block {
+        margin-top: 115px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        font-size: 18px
+    }
+    .Сapability-block-item:nth-child(2) {
+        margin: 0;
+        padding: 10px 0 0 0;
+    }
+    .Сapability-block-item:nth-child(3) {
+        margin: 0;
+        padding: 10px 0 0 0;
+    }
+    .Сapability-block-item span {
+        text-transform: uppercase;
+    }
+    .Сapability-block-item p {
+        font-size: 18px;
+    }
+    /* начало третьего блока */
+    .projects-block {
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+    .projects-title {
+        text-transform: uppercase;
+    }
+    .navig-btn {
+        height: 60px
+    }
+    /* начало 4 блока */
+    .mobile-info-block {
+        width: 100%;
+        padding: 30px 15px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-position: 5% 100%;
+        background-size: 50%;
+    }
+    .mobile-info-block span {
+        text-transform: uppercase;
+        font-size: 26px;
+    }
+    .mobile-info-txt {
+        width: 100%;
+    }
+    .details-wrp {
+        margin-left: 45%;
+    }
+    .mobile-info-detail {
+        font-size: 13px;
+    }
+    /*начало 6 блока */
+    .posts-block > span {
+        text-transform: uppercase;
+    }
+    .posts-block p {
+        width: 100%;
+    }
+    .posts-wrp {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /*начало 7 блока */
+    .parner-block {
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+    .parner-block a {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+    }
+    .parner-block img {
+        width: 50%;
+        height: 50%;
+    }
+    .footer-block {
+        flex-direction: column;
+        padding: 10px;
+        box-sizing: border-box;
+        min-height: 80px
+    }
+    .footer-block div {
+        display: flex;
+        justify-content: space-between
+    }
 }
